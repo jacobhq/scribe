@@ -8,13 +8,17 @@
     "start": "next start"
   },
   "dependencies": {
+    "cookie": "^0.4.1",
     "immutable": "^4.0.0-rc.12",
     "next": "10.0.6",
     "react": "17.0.1",
+    "react-cookie": "^4.0.3",
     "react-dom": "17.0.1",
     "slate": "^0.59.0",
     "slate-history": "^0.59.0",
-    "slate-react": "^0.59.0"
+    "slate-react": "^0.59.0",
+    "sweetalert2": "^10.14.0",
+    "sweetalert2-react-content": "^3.2.2"
   },
   "devDependencies": {
     "@types/node": "^14.14.25",

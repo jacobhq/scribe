@@ -23,8 +23,12 @@ import {
   useSelected,
   useFocused,
 } from "slate-react";
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
 
 import { Portal } from "../components/components";
+
+const Modal = withReactContent(Swal)
 
 const SHORTCUTS = {
   "*": "list-item",
@@ -169,6 +173,19 @@ const MentionExample = () => {
     </div>
   );
 };
+
+Modal.fire({
+  titleText: 'We use markdown',
+  text: 'This is a document syntax, not a disgiuse for trackers.',
+  confirmButtonText: 'Get writing',
+  // TODO - Add cancel thing
+  showCancelButton: false,
+  cancelButtonText: "What's markdown?",
+  icon: 'info',
+  timer: 7500,
+  timerProgressBar: true,
+  footer: 'Built with ❤️ by Jacob Marshall'
+})
 
 const withMentions = (editor) => {
   const { isInline, isVoid, deleteBackward, insertText } = editor;
@@ -329,27 +346,10 @@ const initialValue = [
     children: [
       {
         text:
-          "This example shows how you might implement a simple @-mentions feature that lets users autocomplete mentioning a user by their username. Which, in this case means Star Wars characters. The mentions are rendered as void inline elements inside the document.",
+          "",
       },
     ],
-  },
-  {
-    children: [
-      { text: "Try mentioning characters, like " },
-      {
-        type: "mention",
-        character: "R2-D2",
-        children: [{ text: "" }],
-      },
-      { text: " or " },
-      {
-        type: "mention",
-        character: "Mace Windu",
-        children: [{ text: "" }],
-      },
-      { text: "!" },
-    ],
-  },
+  }
 ];
 
 const CHARACTERS = [
