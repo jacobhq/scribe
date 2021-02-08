@@ -187,6 +187,16 @@ Modal.fire({
   footer: 'Built with ❤️ by Jacob Marshall'
 })
 
+Modal.fire({
+  titleText: 'Saving will be added in a future update',
+  showConfirmButton: false,
+  toast: true,
+  position: 'bottom-start',
+  icon: 'error',
+  timer: 3500,
+  timerProgressBar: true,
+})
+
 const withMentions = (editor) => {
   const { isInline, isVoid, deleteBackward, insertText } = editor;
 
