@@ -110,6 +110,12 @@ const MentionExample = () => {
           setValue(value);
           const { selection } = editor;
 
+          // Save the value to Local Storage.
+          if (typeof window !== "undefined") {
+              const content = JSON.stringify(value)
+              localStorage.setItem('content', content)
+          }
+
           if (selection && Range.isCollapsed(selection)) {
             const [start] = Range.edges(selection);
             const wordBefore = Editor.before(editor, start, { unit: "word" });
