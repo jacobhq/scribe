@@ -357,16 +357,16 @@ const MentionElement = ({ attributes, children, element }) => {
   );
 };
 
-const initialValue = [
-  {
-    children: [
-      {
-        text:
-          "",
-      },
-    ],
-  }
-];
+const initialValue = typeof window === 'undefined'
+    ? {
+      JSON.parse(localStorage.getItem('content')) || [
+        {
+          type: 'paragraph',
+          children: [{ text: 'A line of text in a paragraph.' }],
+        },
+      ]
+    }
+    : window;
 
 const CHARACTERS = [
   "Aayla Secura",
